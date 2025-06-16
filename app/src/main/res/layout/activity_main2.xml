@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5F5">
+
+    <!-- Scrollable Input UI -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <!-- App Title -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="🌾 Crop Recommendation"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textColor="#2E7D32"
+                android:layout_gravity="center" />
+
+            <!-- Input Fields -->
+            <EditText
+                android:id="@+id/nitrogeninput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nitrogen (N)"
+                android:inputType="numberDecimal"
+                android:drawableStart="@drawable/ic_science"
+                android:padding="12dp" />
+
+            <EditText
+                android:id="@+id/phosphorusinput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Phosphorus (P)"
+                android:inputType="numberDecimal"
+                android:drawableStart="@drawable/ic_science"
+                android:padding="12dp" />
+
+            <EditText
+                android:id="@+id/potassiuminput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Potassium (K)"
+                android:inputType="numberDecimal"
+                android:drawableStart="@drawable/ic_science"
+                android:padding="12dp" />
+
+            <EditText
+                android:id="@+id/tempinput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Temperature (°C)"
+                android:inputType="numberDecimal"
+                android:drawableStart="@drawable/ic_thermostat"
+                android:padding="12dp" />
+
+            <EditText
+                android:id="@+id/humidityinput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Humidity (%)"
+                android:inputType="numberDecimal"
+                android:drawableStart="@drawable/ic_water_drop"
+                android:padding="12dp" />
+
+            <EditText
+                android:id="@+id/pHinput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="pH Level"
+                android:inputType="numberDecimal"
+                android:drawableStart="@drawable/ic_ph"
+                android:padding="12dp" />
+
+            <EditText
+                android:id="@+id/raininput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Rainfall (mm)"
+                android:inputType="numberDecimal"
+                android:drawableStart="@drawable/ic_rain"
+                android:padding="12dp" />
+
+            <!-- Predict Button -->
+            <Button
+                android:id="@+id/getbtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Predict Crop"
+                android:layout_marginTop="24dp"
+                android:backgroundTint="#66BB6A"
+                android:textColor="#FFF" />
+
+            <!-- Result Display -->
+            <TextView
+                android:id="@+id/optxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Recommended crop will be displayed here."
+                android:textSize="18sp"
+                android:textColor="#1B5E20"
+                android:background="#E8F5E9"
+                android:padding="16dp"
+                android:layout_marginTop="20dp"
+                android:visibility="visible" />
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- 🔄 ProgressBar Floating at Center -->
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center"
+        android:visibility="gone"
+        android:indeterminate="true"
+        style="?android:attr/progressBarStyleLarge" />
+</FrameLayout>
