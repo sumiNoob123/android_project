@@ -12,7 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.material.button.MaterialButton;
 
 public class MainActivity extends AppCompatActivity {
-    // Define a TAG for logging, good practice
+
     private static final String TAG = "MainActivity";
 
     @Override
@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
 
         MaterialButton loginbtn = (MaterialButton) findViewById(R.id.loginbtn);
 
-        // admin and admin
+
 
         loginbtn.setOnClickListener(new View.OnClickListener() {
             @Override
