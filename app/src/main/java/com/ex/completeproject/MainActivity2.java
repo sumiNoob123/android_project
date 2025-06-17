@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -21,6 +22,7 @@ public class MainActivity2 extends AppCompatActivity {
     EditText nitrogen, phosphorus, potassium, temperature, rainfall, ph, humidity;
     TextView textview;
     Button button;
+    ImageView cropImageView;
 
     // Pre-loaded Python objects
     Python py;
@@ -41,8 +43,9 @@ public class MainActivity2 extends AppCompatActivity {
         humidity = findViewById(R.id.humidityinput);
         button = findViewById(R.id.getbtn);
         textview = findViewById(R.id.optxt);
+        cropImageView = findViewById(R.id.cropImageView);
 
-        //Background thread used to pre_load the python_environment_script while starting-up the app
+        // Background thread used to pre-load the Python environment script while starting the app
         new Thread(() -> {
             if (!Python.isStarted()) {
                 Python.start(new AndroidPlatform(this));
@@ -55,6 +58,7 @@ public class MainActivity2 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 textview.setText("");
+                cropImageView.setVisibility(View.GONE);
 
                 try {
                     // Read inputs
@@ -84,7 +88,20 @@ public class MainActivity2 extends AppCompatActivity {
                     new Thread(() -> {
                         try {
                             PyObject result = pyObj.callAttr("recommendation", n, p, k, temp, hum, phVal, rain);
-                            runOnUiThread(() -> textview.setText("Recommended Crop: " + result.toString()));
+                            String cropName = result.toString().toLowerCase().replace(" ", "");
+
+                            runOnUiThread(() -> {
+                                textview.setText("Recommended Crop: " + result.toString());
+
+                                int resId = getResources().getIdentifier(cropName, "drawable", getPackageName());
+                                if (resId != 0) {
+                                    cropImageView.setImageResource(resId);
+                                    cropImageView.setVisibility(View.VISIBLE);
+                                } else {
+                                    cropImageView.setVisibility(View.GONE);
+                                }
+                            });
+
                         } catch (Exception e) {
                             runOnUiThread(() -> textview.setText("Error: " + e.getMessage()));
                             e.printStackTrace();

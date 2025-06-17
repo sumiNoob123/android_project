@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">complete project</string>
+    <string name="crop_image">Image of the recommended crop</string>
+
 </resources>
