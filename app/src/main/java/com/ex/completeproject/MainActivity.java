@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
                     Intent intent = new Intent(MainActivity.this,MainActivity2.class);
                     startActivity(intent);
                 } else {
-                    // incorrect
+
                     Toast.makeText(MainActivity.this, "LOGIN FAILED !!!", Toast.LENGTH_SHORT).show();
                     Log.w(TAG, "Login failed. Entered Username: '" + enteredUsername + "', Entered Password: '" + enteredPassword + "'");
                 }
