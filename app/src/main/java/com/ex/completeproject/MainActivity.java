@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
                 String enteredUsername = username.getText().toString().trim();
                 String enteredPassword = password.getText().toString().trim();
 
-                // For debugging: Log the trimmed values
+
                 Log.d(TAG, "Attempting login with Username: '" + enteredUsername + "'");
                 Log.d(TAG, "Attempting login with Password: '" + enteredPassword + "'");
 
