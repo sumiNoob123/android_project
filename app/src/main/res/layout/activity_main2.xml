@@ -34,7 +34,9 @@
                 android:hint="Nitrogen (N)"
                 android:inputType="numberDecimal"
                 android:drawableStart="@drawable/ic_science"
-                android:padding="12dp" />
+                android:padding="12dp"
+                android:textColor="#80000000"
+                android:textColorHint="#77DD77"/>
 
             <EditText
                 android:id="@+id/phosphorusinput"
@@ -43,7 +45,9 @@
                 android:hint="Phosphorus (P)"
                 android:inputType="numberDecimal"
                 android:drawableStart="@drawable/ic_science"
-                android:padding="12dp" />
+                android:padding="12dp"
+                android:textColor="#80000000"
+                android:textColorHint="#77DD77"/>
 
             <EditText
                 android:id="@+id/potassiuminput"
@@ -52,7 +56,9 @@
                 android:hint="Potassium (K)"
                 android:inputType="numberDecimal"
                 android:drawableStart="@drawable/ic_science"
-                android:padding="12dp" />
+                android:padding="12dp"
+                android:textColor="#80000000"
+                android:textColorHint="#77DD77"/>
 
             <EditText
                 android:id="@+id/tempinput"
@@ -61,7 +67,9 @@
                 android:hint="Temperature (°C)"
                 android:inputType="numberDecimal"
                 android:drawableStart="@drawable/ic_thermostat"
-                android:padding="12dp" />
+                android:padding="12dp"
+                android:textColor="#80000000"
+                android:textColorHint="#77DD77"/>
 
             <EditText
                 android:id="@+id/humidityinput"
@@ -70,7 +78,9 @@
                 android:hint="Humidity (%)"
                 android:inputType="numberDecimal"
                 android:drawableStart="@drawable/ic_water_drop"
-                android:padding="12dp" />
+                android:padding="12dp"
+                android:textColor="#80000000"
+                android:textColorHint="#77DD77"/>
 
             <EditText
                 android:id="@+id/pHinput"
@@ -79,7 +89,9 @@
                 android:hint="pH Level"
                 android:inputType="numberDecimal"
                 android:drawableStart="@drawable/ic_ph"
-                android:padding="12dp" />
+                android:padding="12dp"
+                android:textColor="#80000000"
+                android:textColorHint="#77DD77"/>
 
             <EditText
                 android:id="@+id/raininput"
@@ -88,7 +100,9 @@
                 android:hint="Rainfall (mm)"
                 android:inputType="numberDecimal"
                 android:drawableStart="@drawable/ic_rain"
-                android:padding="12dp" />
+                android:padding="12dp"
+                android:textColor="#80000000"
+                android:textColorHint="#77DD77"/>
 
             <!-- Predict Button -->
             <Button
@@ -97,8 +111,8 @@
                 android:layout_height="wrap_content"
                 android:text="Predict Crop"
                 android:layout_marginTop="24dp"
-                android:backgroundTint="#66BB6A"
-                android:textColor="#FFF" />
+                android:backgroundTint="#4682B4"
+                android:textColor="@color/black" />
 
             <!-- Result Display -->
             <TextView
